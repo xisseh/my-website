@@ -1,0 +1,598 @@
+	<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОПУТ - Организация перевозок и управления транспортом</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #1a3c6c;
+            color: white;
+            padding: 16px 0;
+            text-align: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo img {
+            margin: 0 10px;
+        }
+        .college-name {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        nav {
+            padding: 10px 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #2c5aa0;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #224478;
+            text-decoration: underline;
+        }
+        .hero {
+            background-color: #3498db;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+        }
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #2c5aa0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        .group-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .group-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #2c5aa0;
+        }
+        .group-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+       }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c5aa0;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .projects-list {
+            margin-top: 20px;
+        }
+        .project-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+        }
+        .project-card .project-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .project-card .project-description {
+            margin-bottom: 15px;
+        }
+        .project-card .project-students {
+            font-style: italic;
+            color: #555;
+        }
+        footer {
+            background-color: #1a3c6c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        .contacts {
+            margin-top: 20px;
+        }
+        .contacts p {
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="https://kstu.kg/dovuzovskaja-podgotovka/politekhnicheskii-kolledzh"><img src="https://i.imgur.com/HjAPxig.png" alt="colledge.png" style="height: 170px;"></a>
+                Кыргызский государственный технический университет им. И.Раззакова
+                <a href="https://kstu.kg/"><img src="https://i.imgur.com/FAuZrG3.png" alt="Unik.png" style="height: 120px;"></a>
+            </div>
+
+            <div class="college-name"><strong>Политехнический колледж КГТУ им. И.Раззакова</strong></div>
+        </div>
+    </header>
+    
+    <div class="hero">
+        <div class="container">
+             <a href="https://kstu.kg/dovuzovskaja-podgotovka/politekhnicheskii-kolledzh/abiturienty/oput"><img src="https://i.imgur.com/naOmpXx.png" alt="Unik.png" style="height: 160px;"></a>
+            <h1>Организация перевозок и управления на транспорте, кроме воздушного</h1>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#about">О группе</a></li>
+            <li><a href="#schedule">Расписание</a></li>
+            <li><a href="#students">Список учащихся</a></li>
+            <li><a href="#projects">Проекты и наработки</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="about" class="section">
+            <h2>О нашей группе</h2>
+            <p>Наша группа ОПУТ (Организация перевозок и управления транспортом) - это дружный и сплоченный коллектив студентов, объединенных общей целью стать профессионалами в области транспортной логистики и управления.</p>
+            <br>
+            <p>Мы не просто одногруппники, мы - настоящая команда, которая всегда готова прийти на помощь друг другу. Вместе мы участвуем в различных мероприятиях колледжа, решаем сложные учебные задачи и проводим время вне стен учебного заведения.</p>
+            <br>
+            <p>Благодаря поддержке преподавателей и нашему взаимному уважению, в группе сложилась особая атмосфера, способствующая не только успешной учебе, но и личностному росту каждого студента.</p>
+            <br>
+            <p>Отдельную благодарность мы хотим выразить нашему заведующему группы, Абдылдаеву Чынгызу Сагынбековичу. Чынгыз агай- вы лучший.</p>
+
+            <div class="group-info">
+                <div class="group-card">
+                    <h3>ОПУТ9-1-23</h3>
+                    <p>Группа на базе 9 классов, поступление в 2023 году</p>
+                    <p>Куратор: Бактыбекова кызы С.</p>
+                    <p>Староста: Шаршеналиев Эламан</p>
+                </div>
+                <div class="group-card">
+                    <h3>ОПУТ11-1-24</h3>
+                    <p>Группа на базе 11 классов, поступление в 2024 году</p>
+                    <p>Куратор: Бактыбекова кызы С.</p>
+                    <p>Староста: Курманбекова Сабина</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="schedule" class="section">
+            <h2>Расписание занятий</h2>
+            
+            <h3>Числитель ОПУТ9-1-23/ОПУТ11-1-24</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Время</th>
+                        <th>Понедельник</th>
+                        <th>Вторник</th>
+                        <th>Среда</th>
+                        <th>Четверг</th>
+                        <th>Пятница</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10:00-11:20</td>
+                        <td></td>
+                        <td>Упр. развитием зел. тех.</td>
+                        <td>Техника АТ</td>
+                        <td>Манасоведение</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>11:30-12:50</td>
+                        <td>Иностранный язык</td>
+                        <td>Техническая механика</td>
+                        <td>Техника АТ</td>
+                        <td>Физкультура</td>
+                        <td>Безопасная погрузка грузов</td>
+                    </tr>
+                    <tr>
+                        <td>13:00-14:20</td>
+                        <td>Метрология</td>
+                        <td>Кураторский час</td>
+                        <td>Техника АТ</td>
+                        <td>Проф. мат.</td>
+                        <td>Проф. мат.</td>
+                    </tr>
+                    <tr>
+                        <td>15:00-16:20</td>
+                        <td>Русский язык</td>
+                        <td></td>
+                        <td>Техническая механика</td>
+                        <td></td>
+                        <td>Упр. проектами в логистике</td>
+                    </tr>
+                    <tr>
+                        <td>16:30-17:50</td>
+                        <td>Инф. тех. в логистике</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>   
+                </tbody>
+            </table>
+            
+            <h3 style="margin-top: 30px;">Знаменатель ОПУТ9-1-23/ОПУТ11-1-24</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Время</th>
+                        <th>Понедельник</th>
+                        <th>Вторник</th>
+                        <th>Среда</th>
+                        <th>Четверг</th>
+                        <th>Пятница</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10:00-11:20</td>
+                        <td></td>
+                        <td>Упр. развитием зел. тех.</td>
+                        <td>Техника АТ</td>
+                        <td>Проф. мат.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>11:30-12:50</td>
+                        <td>Иностранный язык</td>
+                        <td>Техническая Механика</td>
+                        <td>Техника АТ</td>
+                        <td>Физкультура</td>
+                        <td>Безопасная погрузка</td>
+                    </tr>
+                    <tr>
+                        <td>13:00-14:20</td>
+                        <td>Метрология</td>
+                        <td></td>
+                        <td>Техника АТ</td>
+                        <td>Проф. мат.</td>
+                        <td>Манасоведение</td>
+                    </tr>
+                    <tr>
+                        <td>15:00-16:20</td>
+                        <td>Русский язык</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Упр. проектами в логистике</td>
+                    </tr>
+                    <tr>
+                        <td>16:30-17:50</td>
+                        <td>Инф. тех. в логистике</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="students" class="section">
+            <h2>Список учащихся</h2>
+            
+            <h3>ОПУТ9-1-23</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>ФИО</th>
+                        <th>Дата рождения</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Абдрасулов Нурсултан</td>
+                        <td>27.03.2005</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Алманбеков Эрболот</td>
+                        <td>23.07.2007</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Альчинов Абдулазиз</td>
+                        <td>27.03.2007</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Асилбекова Арууке</td>
+                        <td>20.06.2006</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Баякеев Максим</td>
+                        <td>20.10.2007</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Дамиров Бексултан</td>
+                        <td>05.08.2007</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Доценко Даниил</td>
+                        <td>15.11.2007</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Жолдошбекова Диана</td>
+                        <td>10.04.2007</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Жунушов Эльдар</td>
+                        <td>06.12.2006</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Ильязов Рамис</td>
+                        <td>07.08.07</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Курманбеков Алишер</td>
+                        <td>07.08.2007</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Макаров Семен</td>
+                        <td>30.09.2006</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Маннапов Абдумалик</td>
+                        <td>30.10.2007</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Синянский Данил</td>
+                        <td>17.01.2008</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Шаршеналиев Эламан</td>
+                        <td>23.10.2007</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Шаршенбеков Залкар</td>
+                        <td>27.11.2007</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 style="margin-top: 30px;">ОПУТ11-1-24</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>ФИО</th>
+                        <th>Дата рождения</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Искенов Нурахмад</td>
+                        <td>07.02.2005</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Курманбекова Сабина</td>
+                        <td>17.01.2006</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Максат улуу Эржан</td>
+                        <td>18.12.2006</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Темирбеков Атай</td>
+                        <td>03.06.2007</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Шонгин Никита</td>
+                        <td>19.08.2006</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="projects" class="section">
+            <h2>Наши проекты</h2>
+            <p><strong>Студенты нашей группы регулярно разрабатывают и реализуют проекты, связанные с транспортной логистикой и управлением перевозками:</strong></p>
+            
+            <div class="projects-list">
+                <div class="project-card">
+                    <h3>Создания личного сайта для групп ОПУТ9-1-23/ОПУТ11-1-24</h3>
+                    <div class="project-meta">
+                        <span>Дата: Март 2025</span>
+                        <span>Подгруппа: ОПУТ9-1-23</span>
+                    </div>
+                    <div class="project-description">
+                        <p>Проект направлен на оптимизацию просмотра данных о наших группах.</p>
+                    </div>
+                    <div class="project-students">
+                        <p>Участники: Синянский Д., Доценко Д., Шершеналиев Э.</p>
+                    </div>
+                </div>
+                
+
+                <div class="project-card">
+                    <h3></h3>
+                    <div class="project-meta">
+                        <span>Дата: </span>
+                        <span>Подгруппа: </span>
+                    </div>
+                    <div class="project-description">
+                        <p></p>
+                    </div>
+                    <div class="project-students">
+                        <p>Участники: </p>
+                    </div>
+                </div>
+                
+
+                <div class="project-card">
+                    <h3></h3>
+                    <div class="project-meta">
+                        <span>Дата: </span>
+                        <span>Подгруппа: </span>
+                    </div>
+                    <div class="project-description">
+                        <p></p>
+                    </div>
+                    <div class="project-students">
+                        <p>Участники: </p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3></h3>
+                    <div class="project-meta">
+                        <span>Дата: </span>
+                        <span>Подгруппа: </span>
+                    </div>
+                    <div class="project-description">
+                        <p></p>
+                    </div>
+                    <div class="project-students">
+                        <p>Участники: </p>
+                    </div>
+                </div>
+                
+
+                <div class="project-card">
+                    <h3></h3>
+                    <div class="project-meta">
+                        <span>Дата: </span>
+                        <span>Подгруппы: </span>
+                    </div>
+                    <div class="project-description">
+                        <p></p>
+                    </div>
+                    <div class="project-students">
+                        <p>Участники: </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="section">
+            <h2>Контакты</h2>
+            <div class="contacts">
+                <p><strong>Адрес колледжа:</strong> г. Бишкек, пр. Манаса, 66, КГТУ им. И.Раззакова</p>
+                <p><strong>Телефон деканата:</strong> +996 (312) 54-51-43</p>
+                <p><strong>Email:</strong> college@kstu.kg</p>
+                <p><strong>Куратор ОПУТ9-1-23:</strong> +996 (706) 24-38-37</p>
+                <p><strong>Куратор ОПУТ11-1-24:</strong> +996 (706) 24-38-37</p>
+                <p><strong>Основатель сайта:</strong> Синянский Данил</p>
+                <p><strong>При создание сайта помогали:</strong> Доценко Даниил,Шаршеналиев Эламан</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Группа ОПУТ - Организация перевозок и управления транспортом</p>
+            <p>КГТУ им. И.Раззакова</p>
+        </div>
+    </footer>
+</body>
+</html>
